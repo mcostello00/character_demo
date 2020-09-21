@@ -14,25 +14,25 @@ const CharacterListItem = ({ character }) => {
 
   return (
     <div>
-      <div class="box">
-        <article class="media">
-          <div class="media-left">
-            <figure class="image is-64x64">
+      <div className="box" style={{ marginBottom: "5px" }}>
+        <article className="media">
+          <div className="media-left">
+            <figure className="image is-64x64">
               <img
                 src="https://bulma.io/images/placeholders/128x128.png"
                 alt=""
               ></img>
             </figure>
           </div>
-          <div class="media-content">
-            <div class="content">
+          <div className="media-content">
+            <div className="content">
               <p>
                 <strong>
                   <NavLink
                     className="CharacterListItemLink"
                     to={`/character/${id}`}
                   >
-                    <h2 className="is-large">{name}</h2>
+                    <span className="title is-2">{name}</span>
                   </NavLink>
                 </strong>{" "}
                 <small>location: {home_location}</small> <br />

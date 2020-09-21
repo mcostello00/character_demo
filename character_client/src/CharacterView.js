@@ -14,44 +14,13 @@ const CharacterView = (props) => {
       });
   }, [id]);
 
-  const deleteChar = () => {
-    fetch(endpoint + "/characters/" + id, {
-      method: "DELETE",
-    });
-  };
-
-  const createChar = () => {
-    fetch(endpoint + "/characters", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        character: { name: "Tim", birthdate: "01/01/2000" },
-      }),
-    });
-  };
-
-  const updateChar = () => {
-    fetch(endpoint + "/characters/" + id, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        character: { name: "Tim2", birthdate: "01/01/2000" },
-      }),
-    });
-  };
-
   return (
     <section className="CharacterView">
       <section className="section">
         <div className="container">
           <div className="column is-half">
             <span className="title">{character.name}</span>
+            <br />
             <br />
             <div className="field">
               <label className="label">Gender: {character.gender}</label>
@@ -73,17 +42,20 @@ const CharacterView = (props) => {
 
             <div className="field is-grouped">
               <div className="control">
-                <NavLink
-                  className="CharacterListItemLink"
-                  to={`/character/${id}/Edit`}
+                <button
+                  className="button is-link"
+                  onClick={() => (window.location = `/character/${id}/Edit`)}
                 >
-                  <h3>edit</h3>
-                </NavLink>
+                  Edit
+                </button>
               </div>
               <div className="control">
-                <NavLink className="CharacterListItemLink" to={`/characters`}>
-                  <h3>back</h3>
-                </NavLink>
+                <button
+                  className="button is-link is-secondary"
+                  onClick={() => (window.location = "/characters")}
+                >
+                  Back
+                </button>
               </div>
             </div>
           </div>

@@ -56,7 +56,7 @@ const CharacterEdit = (props) => {
           <div className="column is-half">
             <span className="title">{character.name}</span>
             <br />
-
+            <br />
             <div className="field">
               <label className="label">Name:</label>
               <div className="control">
