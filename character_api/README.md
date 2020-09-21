@@ -1,24 +1,50 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Project
 
-Things you may want to cover:
+character_demo
 
-* Ruby version
+## Install
 
-* System dependencies
+### Clone the repository
 
-* Configuration
+```shell
+git@github.com:mcostello00/character_demo.git
+cd project
+```
 
-* Database creation
+### Check your Ruby version
 
-* Database initialization
+```shell
+ruby -v
+```
 
-* How to run the test suite
+The ouput should start with something like `ruby 2.7.1`
 
-* Services (job queues, cache servers, search engines, etc.)
+If not, install the right ruby version using [rbenv](https://github.com/rbenv/rbenv) (it could take a while):
 
-* Deployment instructions
+```shell
+rbenv install 2.7.1
+```
 
-* ...
+### Install dependencies
+
+Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.com/yarnpkg/yarn):
+
+```shell
+bundle && yarn
+```
+
+### Initialize the database
+
+```shell
+rails db:create db:migrate db:seed
+```
+
+
+## Serve
+
+```shell
+rails s
+```
+
